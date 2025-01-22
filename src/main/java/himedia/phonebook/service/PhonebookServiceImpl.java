@@ -13,11 +13,10 @@ public class PhonebookServiceImpl implements PhonebookService {
 
 	@Autowired
 	private PhonebookDao phonebookDaoImpl;
-	
+
 	@Override
 	public boolean insertPhonebook(PhonebookVo phonebookVo) {
-		return 
-			1 == phonebookDaoImpl.insert(phonebookVo);
+		return 1 == phonebookDaoImpl.insert(phonebookVo);
 	}
 
 	@Override
@@ -27,8 +26,7 @@ public class PhonebookServiceImpl implements PhonebookService {
 
 	@Override
 	public boolean deletePhonebook(Integer id) {
-		// TODO Auto-generated method stub
-		return false;
+		return 1 == phonebookDaoImpl.delete(id);
 	}
 
 	@Override
