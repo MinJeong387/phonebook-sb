@@ -13,10 +13,11 @@ public class PhonebookServiceImpl implements PhonebookService {
 
 	@Autowired
 	private PhonebookDao phonebookDaoImpl;
-
+	
 	@Override
 	public boolean insertPhonebook(PhonebookVo phonebookVo) {
-		return 1 == phonebookDaoImpl.insert(phonebookVo);
+		return 
+			1 == phonebookDaoImpl.insert(phonebookVo);
 	}
 
 	@Override

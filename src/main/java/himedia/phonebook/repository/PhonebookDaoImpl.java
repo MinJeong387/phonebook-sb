@@ -13,13 +13,15 @@ import himedia.phonebook.repository.vo.PhonebookVo;
 public class PhonebookDaoImpl implements PhonebookDao {
 	@Autowired
 	private PhonebookMapper phonebookMapper;
-
+	
 	@Override
 	public int insert(PhonebookVo phonebookVo) {
 		try {
 			return phonebookMapper.insert(phonebookVo);
 		} catch (Exception e) {
-			throw new PhonebookDaoException("전화번호 입력 중 예외 발생", e, phonebookVo);
+			throw new PhonebookDaoException("전화번호 입력 중 예외 발생", 
+											e, 
+											phonebookVo );
 		}
 	}
 
@@ -28,7 +30,9 @@ public class PhonebookDaoImpl implements PhonebookDao {
 		try {
 			return phonebookMapper.update(phonebookVo);
 		} catch (Exception e) {
-			throw new PhonebookDaoException("전화번호 수정 중 예외 발생", e, phonebookVo);
+			throw new PhonebookDaoException("전화번호 수정 중 예외 발생",
+											e,
+											phonebookVo);
 		}
 	}
 
@@ -37,20 +41,22 @@ public class PhonebookDaoImpl implements PhonebookDao {
 		try {
 			return phonebookMapper.delete(id);
 		} catch (Exception e) {
-			throw new PhonebookDaoException("전화번호 삭제 중 오류 발생: " + id, e);
+			throw new PhonebookDaoException(
+					"전화번호 삭제 중 오류 발생: " +id, e);
 		}
-		return 0;
 	}
 
 	@Override
 	public PhonebookVo selectOne(Integer id) {
-		PhonebookVo phonebookVo = phonebookMapper.selectOne(id);
+		PhonebookVo phonebookVo = 
+				phonebookMapper.selectOne(id);
 		return phonebookVo;
 	}
 
 	@Override
 	public List<PhonebookVo> selectAll() {
-		List<PhonebookVo> list = phonebookMapper.selectAll();
+		List<PhonebookVo> list = 
+				phonebookMapper.selectAll();
 		return list;
 	}
 
