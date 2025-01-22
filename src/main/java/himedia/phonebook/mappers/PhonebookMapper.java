@@ -3,6 +3,7 @@ package himedia.phonebook.mappers;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import himedia.phonebook.repository.vo.PhonebookVo;
 
@@ -12,4 +13,15 @@ public interface PhonebookMapper {
 //	<select id="selectAll" resultType="phonebookVo">
 	List<PhonebookVo> selectAll();
 
+//	<insert id="insert" parameterType="phonebookVo">
+	int insert(PhonebookVo phonebookVo);
+	
+//	<select id="selectOne"
+//			parameterType="int"
+//			resultType="phonebookVo">
+//	@Select("SELECT * FROM phonebook WHERE id=#{id}")
+	PhonebookVo selectOne(Integer id);
+	
+//	<update id="update" parameterType="phonebookVo">
+	int update(PhonebookVo phonebookVo);
 }
